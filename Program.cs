@@ -1,8 +1,8 @@
-using Web_API_Usuario.Models;
+using Web_API_Usuario.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<DbUsuarioContext>(options =>
+builder.Services.AddDbContext<DbGeneralContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.

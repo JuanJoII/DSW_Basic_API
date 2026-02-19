@@ -5,13 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Web_API_Usuario.Models;
+using Web_API_Usuario.Data;
 
 #nullable disable
 
 namespace Web_API_Usuario.Migrations
 {
-    [DbContext(typeof(DbUsuarioContext))]
-    partial class DbUsuarioContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(DbGeneralContext))]
+    partial class DbGeneralContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
