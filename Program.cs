@@ -14,10 +14,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
+
+//Filtros
 builder.Services.AddScoped<TestFilter>();
+builder.Services.AddScoped<Filtrico>();
 
 // Inyección de dependencias para servicios
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IUSerService, UserService>();
 
 var app = builder.Build();
 
