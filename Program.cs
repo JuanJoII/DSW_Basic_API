@@ -1,5 +1,8 @@
 using Web_API_Usuario.Data;
 using Microsoft.EntityFrameworkCore;
+using DSW_Basic_API.Filters;
+using DSW_Basic_API.Interfaces;
+using DSW_Basic_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DbGeneralContext>(options =>
@@ -11,6 +14,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<TestFilter>();
+
+// Inyección de dependencias para servicios
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
